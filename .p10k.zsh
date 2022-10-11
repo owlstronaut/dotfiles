@@ -1575,7 +1575,8 @@
   }
 
   function prompt_cowork() {
-    retval=$(command git config --get-all coworking.coauthor | xargs)
+    # I need the grep to shorten to username here, but not when running locally
+    retval=$(command git config --get-all coworking.coauthor | grep -oP '(?<=<)(.*?)(?=@)' | xargs)
     if [[ -n $retval ]]; then
       p10k segment -f 208 -i '💻' -t "$retval"
     fi
