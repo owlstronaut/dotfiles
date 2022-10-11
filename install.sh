@@ -26,7 +26,7 @@ zshrc() {
 sudo apt-get install fonts-powerline
 zshrc
 
-cat .gitconfig > $HOME/.gitconfig
-
 echo "Installing coworking app"
 npm install -g @koddsson/coworking-with
+
+cat .gitconfig > $HOME/.gitconfig
