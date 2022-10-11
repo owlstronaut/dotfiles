@@ -15,15 +15,15 @@ create_symlinks() {
         rm -rf ~/$name
         ln -s $script_dir/$name ~/$name
     done
-
-    # Create a symbolic link to oh-my-zsh settings.
-    ln -s $script_dir/.oh-my-zsh ~/.oh-my-zsh
-
-    # Create a symlink to .gitconfig
-    ln -s $script_dir/.gitconfig ~/.gitconfig
 }
 
 create_symlinks
 
 echo "Installing coworking app"
 npm install -g @koddsson/coworking-with
+
+echo "Setting up the Spaceship theme."
+sudo apt-get install powerline fonts-powerline -y
+ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
+git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
