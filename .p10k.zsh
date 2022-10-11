@@ -1577,7 +1577,7 @@
   function prompt_cowork() {
     retval=$(command git config --get-all coworking.coauthor | xargs)
     if [[ -n $retval ]]; then
-      p10k segment -f 208 -i '👨🏻‍💻' -t "coworking with $retval"
+      p10k segment -f 208 -i '💻' -t "$retval"
     fi
   }
 
