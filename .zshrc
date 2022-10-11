@@ -122,3 +122,5 @@ function killport() { lsof -i TCP:$1 | grep LISTEN | awk '{print $2}' | xargs ki
 gh completion -s zsh > ~/.oh-my-zsh/completions/_gh
 autoload -U compinit
 compinit -isource ~/powerlevel10k/powerlevel10k.zsh-theme
+
+alias cowork="npx -q @koddsson/coworking-with"
