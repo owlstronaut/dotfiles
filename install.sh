@@ -19,8 +19,8 @@ create_symlinks() {
 
 create_symlinks
 
-echo "Initializing conda for zsh."
-conda init zsh
+echo "Installing coworking app"
+npm install -g @koddsson/coworking-with
 
 echo "Setting up the Spaceship theme."
 sudo apt-get install powerline fonts-powerline -y
