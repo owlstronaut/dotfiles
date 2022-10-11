@@ -1,29 +1,36 @@
 #!/bin/bash
 
-
-create_symlinks() {
-    # Get the directory in which this script lives.
-    script_dir=$(dirname "$(readlink -f "$0")")
-
-    # Get a list of all files in this directory that start with a dot.
-    files=$(find -maxdepth 1 -name ".*")
-
-    # Create a symbolic link to each file/dir in the home directory.
-    for file in $files; do
-        name=$(basename $file)
-        echo "Creating symlink to $name in home directory."
-        rm -rf ~/$name
-        ln -s $script_dir/$name ~/$name
-    done
+zshrc() {
+    echo "==========================================================="
+    echo "             cloning zsh-autosuggestions                   "
+    echo "-----------------------------------------------------------"
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    echo "==========================================================="
+    echo "             cloning zsh-syntax-highlighting               "
+    echo "-----------------------------------------------------------"
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    echo "==========================================================="
+    echo "             cloning powerlevel10k                         "
+    echo "-----------------------------------------------------------"
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+    echo "==========================================================="
+    echo "             import zshrc                                  "
+    echo "-----------------------------------------------------------"
+    cat .zshrc > $HOME/.zshrc
+    echo "==========================================================="
+    echo "             import powerlevel10k                          "
+    echo "-----------------------------------------------------------"
+    cat .p10k.zsh > $HOME/.p10k.zsh
 }
 
-create_symlinks
+zshrc
+
+# make directly highlighting readable - needs to be after zshrc line
+echo "" >> ~/.zshrc
+echo "# remove ls and directory completion highlight color" >> ~/.zshrc
+echo "_ls_colors=':ow=01;33'" >> ~/.zshrc
+echo 'zstyle ":completion:*:default" list-colors "${(s.:.)_ls_colors}"' >> ~/.zshrc
+echo 'LS_COLORS+=$_ls_colors' >> ~/.zshrc
 
 echo "Installing coworking app"
 npm install -g @koddsson/coworking-with
-
-echo "Setting up the Spaceship theme."
-sudo apt-get install powerline fonts-powerline -y
-ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
-git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
-ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
