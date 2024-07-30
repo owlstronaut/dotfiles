@@ -1,6 +1,13 @@
 [user]
   name = Michael Smith
   email = owlstronaut@github.com
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHlAYc0f/UQhli3mQbt3zHo6Q/mSrzy46piN4yKruOlO
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[commit]
+  gpgsign = true
 [color]
   diff=always
   status=always
@@ -45,8 +52,8 @@
 [core]
   pager = cat
 [pull]
-	rebase = false
+  rebase = false
 [init]
-	defaultBranch = main
+  defaultBranch = main
 [fetch]
-	prune = true
+  prune = true
