@@ -1,5 +1,5 @@
-export EDITOR=vim
-export VISUAL="$EDITOR"
-alias dc="docker-compose"
-alias d="docker"
-alias k="kubectl"
+# Loop through all files in the ~/.zshrc.d directory and source them
+for file in "$HOME/.zshrc.d/"*.zsh
+do
+  [ -r "$file" ] && source "$file"
+done

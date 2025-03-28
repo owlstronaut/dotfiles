@@ -1,0 +1,10 @@
+alias dc="docker-compose"
+alias d="docker"
+alias k="kubectl"
+alias code='code-insiders'
+alias explorer='open'
+alias finder='open'
+alias python='python3'
+alias pip='pip3'
+alias gather-activity="node /Users/owlstronaut/Documents/scripts/activity-gatherer/index.js"
+alias issue="node /Users/owlstronaut/Documents/scripts/issue-downloader/index.js"
