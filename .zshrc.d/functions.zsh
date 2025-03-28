@@ -10,6 +10,9 @@ cd() {
     cli)
       builtin cd /Users/owlstronaut/Documents/npmjs/cli
       ;;
+    scripts)
+      builtin cd /Users/owlstronaut/Documents/scripts
+      ;;
     test)
       builtin cd /Users/owlstronaut/Documents/test-packages
       ;;
