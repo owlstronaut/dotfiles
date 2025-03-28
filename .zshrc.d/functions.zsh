@@ -16,6 +16,9 @@ cd() {
     test)
       builtin cd /Users/owlstronaut/Documents/test-packages
       ;;
+    arborist)
+      builtin cd /Users/owlstronaut/Documents/npmjs/cli/workspaces/arborist
+      ;;
     *)
       builtin cd "$@"
       ;;
