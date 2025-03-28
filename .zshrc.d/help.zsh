@@ -14,9 +14,7 @@ Aliases:
 
 Functions:
   npmdev     : Runs the custom npm CLI script at /Users/owlstronaut/Documents/npmjs/cli/bin/npm-cli.js.
-  ghcs       : Wrapper for 'gh copilot suggest' which suggests a command based on a natural language prompt.
-  ghce       : Wrapper for 'gh copilot explain' that explains a given command in natural language.
-  cd         : Extended cd command for shortcuts ('npm', 'cli', 'test').
+  cd         : Extended cd command for shortcuts ('npm', 'cli', 'scripts', 'test').
   clean      : Recursively deletes all node_modules directories and package-lock.json files.
 EOF
 }
