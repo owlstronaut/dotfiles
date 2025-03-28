@@ -1,6 +1,18 @@
 [user]
   name = Michael Smith
   email = owlstronaut@github.com
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHlAYc0f/UQhli3mQbt3zHo6Q/mSrzy46piN4yKruOlO
+[color]
+  diff=always
+  status=always
+  branch=always
+  interactive=always
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[commit]
+  gpgsign = true
 [color]
   diff=always
   status=always
@@ -21,6 +33,7 @@
   uncommit = reset --soft HEAD~1
   pushd = push -u origin HEAD
   fetchme = "!git fetch origin $(git branch --show-current) && git merge"
+  dif = "!git diff | sed -r 's/\\x1B\\[[0-9;]*[mK]//g'"
 [push]
   default = tracking
 [github]
@@ -31,7 +44,7 @@
   prompt = false
 [difftool "code"]
   trustExitCode = true
-  cmd = code --wait --diff $LOCAL $REMOTE
+  cmd = code-insiders --wait --diff $LOCAL $REMOTE
 [merge]
   tool = code
 [mergetool]
@@ -44,6 +57,7 @@
   branch = false
 [core]
   pager = cat
+	editor = code-insiders --wait
 [pull]
   rebase = false
 [init]
