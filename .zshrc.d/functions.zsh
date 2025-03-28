@@ -2,6 +2,8 @@ npmdev() {
   node /Users/owlstronaut/Documents/npmjs/cli/bin/npm-cli.js "$@"
 }
 
+mkcd () { mkdir "$1" && cd "$1" }
+
 cd() {
   case "$1" in
     npm)

@@ -16,5 +16,6 @@ Functions:
   npmdev     : Runs the custom npm CLI script at /Users/owlstronaut/Documents/npmjs/cli/bin/npm-cli.js.
   cd         : Extended cd command for shortcuts ('npm', 'cli', 'scripts', 'test', 'arborist').
   clean      : Recursively deletes all node_modules directories and package-lock.json files.
+  mkcd       : Creates a directory and changes into it.
 EOF
 }
