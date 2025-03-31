@@ -1,15 +1,14 @@
 autoload -U compinit && compinit
 
-# Custom completion for the cd function with preset cases
 _cd() {
-  local -a opts
-  opts=(npm cli scripts test arborist)
   if (( CURRENT == 2 ))
   then
-    compadd -S '' $opts
+    # Get the default directory completions
+    _path_files -/
+    # Add our custom completions
+    compadd npm cli scripts test arborist
   else
-    # Fall back to default completions
-    _default
+    _files
   fi
 }
 compdef _cd cd
