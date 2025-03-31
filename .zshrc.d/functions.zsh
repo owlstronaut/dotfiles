@@ -2,6 +2,10 @@ npmdev() {
   node /Users/owlstronaut/Documents/npmjs/cli/bin/npm-cli.js "$@"
 }
 
+npmdevs() {
+  node /Users/owlstronaut/Documents/npmjs/cli/bin/npm-cli.js "$@" --loglevel=silly
+}
+
 mkcd () { mkdir "$1" && cd "$1" }
 
 cd() {
