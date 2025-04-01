@@ -10,6 +10,10 @@ npm-query() {
   /Users/owlstronaut/Documents/scripts/npm-query/npm-query-list.sh "$@"
 }
 
+template-approver() {
+  /Users/owlstronaut/Documents/scripts/template-approver/template-approver.sh "$@"
+}
+
 mkcd () { mkdir "$1" && cd "$1" }
 
 cd() {
