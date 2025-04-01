@@ -6,6 +6,10 @@ npmdevs() {
   node /Users/owlstronaut/Documents/npmjs/cli/bin/npm-cli.js "$@" --loglevel=silly
 }
 
+npm-query() {
+  /Users/owlstronaut/Documents/scripts/npm-query/npm-query-list.sh "$@"
+}
+
 mkcd () { mkdir "$1" && cd "$1" }
 
 cd() {
