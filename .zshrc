@@ -6,18 +6,20 @@ do
   [ -r "$file" ] && source "$file"
 done
 
+export NVM_DIR=~/.nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
 ZSH_THEME='robbyrussell'
 
 plugins=(
   git
-  zsh-autosuggestions
   zsh-syntax-highlighting
-  you-should-use
+  zsh-autosuggestions
+  zsh-autocomplete
   zsh-bat
 )
 
 HYPHEN_INSENSITIVE="true"
 
 zstyle ':omz:update' mode auto      # update automatically without asking
-
 source $ZSH/oh-my-zsh.sh
