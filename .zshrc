@@ -24,5 +24,7 @@ HYPHEN_INSENSITIVE="true"
 # disable menu selection
 unsetopt automenu
 
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+
 zstyle ':omz:update' mode auto      # update automatically without asking
 source $ZSH/oh-my-zsh.sh
