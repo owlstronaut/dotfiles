@@ -16,29 +16,6 @@ template-approver() {
 
 mkcd () { mkdir "$1" && cd "$1" }
 
-cd() {
-  case "$1" in
-    npm)
-      builtin cd /Users/owlstronaut/Documents/npmjs
-      ;;
-    cli)
-      builtin cd /Users/owlstronaut/Documents/npmjs/cli
-      ;;
-    scripts)
-      builtin cd /Users/owlstronaut/Documents/scripts
-      ;;
-    test)
-      builtin cd /Users/owlstronaut/Documents/test-packages
-      ;;
-    arborist)
-      builtin cd /Users/owlstronaut/Documents/npmjs/cli/workspaces/arborist
-      ;;
-    *)
-      builtin cd "$@"
-      ;;
-  esac
-}
-
 # Working on the npm/cli means I need to clean things all the time
 clean() {
     echo 'Starting deletion of node_modules directories and package-lock.json files recursively'

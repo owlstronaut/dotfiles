@@ -18,7 +18,6 @@ Functions:
   npm-query  : Lists npm packages with their IDs, locations, and sources. Accepts optional query arguments.
   template-approver : Approves template-oss PRs using a filter. Requires a filter argument.
                       Example: template-approver "title:'4.23.3', baseRef:main"
-  cd         : Extended cd command for shortcuts ('npm', 'cli', 'scripts', 'test', 'arborist').
   clean      : Recursively deletes all node_modules directories and package-lock.json files.
   mkcd       : Creates a directory and changes into it.
 EOF

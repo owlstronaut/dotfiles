@@ -52,7 +52,7 @@
   keepBackup = false
 [mergetool "code"]
   trustExitCode = true
-  cmd = code --wait $MERGED
+  cmd = code-insiders --wait $MERGED
 [pager]
   branch = false
 [core]
