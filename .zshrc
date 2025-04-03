@@ -21,5 +21,8 @@ plugins=(
 
 HYPHEN_INSENSITIVE="true"
 
+# disable menu selection for git commands
+zstyle ':completion:*:*:git:*' menu off
+
 zstyle ':omz:update' mode auto      # update automatically without asking
 source $ZSH/oh-my-zsh.sh
