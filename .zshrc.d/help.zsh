@@ -20,5 +20,6 @@ Functions:
                       Example: template-approver "title:'4.23.3', baseRef:main"
   clean      : Recursively deletes all node_modules directories and package-lock.json files.
   mkcd       : Creates a directory and changes into it.
+  git-prune  : Prunes local git branches that haven't been touched in 7 or more days, excluding main, master, latest, and the current branch.
 EOF
 }

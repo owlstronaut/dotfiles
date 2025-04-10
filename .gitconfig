@@ -58,6 +58,7 @@
 [core]
   pager = cat
 	editor = code-insiders --wait
+	hooksPath = /Users/owlstronaut/.githooks
 [pull]
   rebase = false
 [init]
