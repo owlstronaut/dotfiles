@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Loop through all files in the ~/.zshrc.d directory and source them
 for file in "$HOME/.zshrc.d/"*.zsh
 do
@@ -45,8 +52,7 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Install: git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# --- VSCode Terminal Tweaks ---
-# Avoid any lines before the prompt (no echo, no extra newlines).
-# If line still hides, tweak VSCode:
-# File > Preferences > Settings > "terminal.integrated.lineHeight": 1.2
-# Or increase font size.
+source ~/.powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
