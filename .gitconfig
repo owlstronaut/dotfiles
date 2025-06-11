@@ -33,7 +33,7 @@
   uncommit = reset --soft HEAD~1
   pushd = push -u origin HEAD
   fetchme = "!git fetch origin $(git branch --show-current) && git merge"
-  dif = "!git diff | sed -r 's/\\x1B\\[[0-9;]*[mK]//g'"
+  dif = "!f() { git diff ${1:-} | sed -r 's/\\x1B\\[[0-9;]*[mK]//g'; }; f"
 [push]
   default = tracking
 [github]
@@ -58,7 +58,7 @@
 [core]
   pager = cat
 	editor = code-insiders --wait
-	hooksPath = /Users/owlstronaut/.githooks
+	hooksPath = .git/hooks
 [pull]
   rebase = false
 [init]

@@ -11,6 +11,8 @@ Aliases:
   issue      : Runs the issue-downloader script.
   gather-activity : Runs the activity-gatherer script to fetch GitHub activity.
                     Optionally accepts a date parameter (e.g., gather-activity 2025-03-10).
+  npm-outdated-dev : Lists outdated npm packages in the current directory, sorted and unique.
+  list-all-prs : Lists all open PRs authored by the user, formatted as a list with URLs.
 
 Functions:
   npmdev     : Runs the custom npm CLI script at /Users/owlstronaut/Documents/npmjs/cli/bin/npm-cli.js.

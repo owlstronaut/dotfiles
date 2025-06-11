@@ -8,3 +8,5 @@ alias python='python3'
 alias pip='pip3'
 alias gather-activity="node /Users/owlstronaut/Documents/scripts/activity-gatherer/index.js"
 alias issue="node /Users/owlstronaut/Documents/scripts/issue-downloader/index.js"
+alias npm-outdated-dev="npm query ':outdated(in-range)'|json -a name|sort|uniq|tr '\n' ' '"
+alias list-all-prs='gh search prs --state open --author @me --json url --jq ".[] | \"- \(.url)\"" --limit 1000'
