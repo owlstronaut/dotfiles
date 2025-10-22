@@ -22,18 +22,29 @@
   co = checkout
   br = branch
   d = difftool
+  # Shows the diff of currently staged files
   dc = difftool --cached
   dd = difftool --dir-diff
   ff = merge
   c = commit --verbose
+  # Lists the last 5 branches sorted by committer date
   brc = for-each-ref --count=5 --sort=committerdate refs/heads/ --format='%(refname:short)'
   cp = cherry-pick
   revertall= reset --hard
   unstage = reset HEAD
   uncommit = reset --soft HEAD~1
+  # Pushes the current branch to the remote tracking branch
   pushd = push -u origin HEAD
+  # Fetches the current branch and merges it with the remote tracking branch
   fetchme = "!git fetch origin $(git branch --show-current) && git merge"
-  dif = "!f() { git diff ${1:-} | sed -r 's/\\x1B\\[[0-9;]*[mK]//g'; }; f"
+  # Diffs the current branch against the remote tracking branch, removing color codes
+  dif = "!f() { git diff \"$@\" | sed -r 's/\\x1B\\[[0-9;]*[mK]//g'; }; f"
+  # Opens a PR diff against the default branch in the browser
+  prdiff = "!gh pr create --web --base \"$(gh repo view --json defaultBranchRef -q .defaultBranchRef.name)\""
+  # Adds all changes, commits with a "quickpush" message, and pushes to the remote tracking branch
+  quickpush = "!git add -A && git commit -n -m 'quickpush' && git push -u origin HEAD"
+  qp = quickpush
+  # Opens the current branch in VS Code
 [push]
   default = tracking
 [github]
@@ -57,7 +68,7 @@
   branch = false
 [core]
   pager = cat
-	editor = code-insiders --wait
+	editor = code-insiders --wait --reuse-window
 	hooksPath = .git/hooks
 [pull]
   rebase = false

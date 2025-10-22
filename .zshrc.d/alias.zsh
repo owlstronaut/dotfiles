@@ -10,3 +10,5 @@ alias gather-activity="node /Users/owlstronaut/Documents/scripts/activity-gather
 alias issue="node /Users/owlstronaut/Documents/scripts/issue-downloader/index.js"
 alias npm-outdated-dev="npm query ':outdated(in-range)'|json -a name|sort|uniq|tr '\n' ' '"
 alias list-all-prs='gh search prs --state open --author @me --json url --jq ".[] | \"- \(.url)\"" --limit 1000'
+alias v-update="node /Users/owlstronaut/Documents/scripts/version-updater/v-update.js"
+alias e-update="node /Users/owlstronaut/Documents/scripts/engine-bumper/engine-bumper.js"

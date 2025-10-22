@@ -1,6 +1,9 @@
 npmdev() {
   node /Users/owlstronaut/Documents/npmjs/cli/bin/npm-cli.js "$@"
 }
+npmstage() {
+  node /Users/owlstronaut/Documents/npmjs/cli-stage/bin/npm-cli.js "$@"
+}
 
 npmdevs() {
   node /Users/owlstronaut/Documents/npmjs/cli/bin/npm-cli.js "$@" --loglevel=silly

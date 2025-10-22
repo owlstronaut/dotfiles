@@ -13,6 +13,9 @@ Aliases:
                     Optionally accepts a date parameter (e.g., gather-activity 2025-03-10).
   npm-outdated-dev : Lists outdated npm packages in the current directory, sorted and unique.
   list-all-prs : Lists all open PRs authored by the user, formatted as a list with URLs.
+  v-update   : Runs the version updater script to update versions in package.json files.
+  e-update   : Runs the engine bumper script to bump the engine version for a repo.
+               Takes a path argument (e.g., e-update /path/to/repo).
 
 Functions:
   npmdev     : Runs the custom npm CLI script at /Users/owlstronaut/Documents/npmjs/cli/bin/npm-cli.js.
